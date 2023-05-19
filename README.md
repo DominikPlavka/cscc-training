@@ -1,1 +1,1 @@
-# cscc-training
+# scss-training
