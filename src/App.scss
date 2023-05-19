@@ -1,0 +1,65 @@
+@import "./breakpoints/breakpoints.scss";
+
+$orange: #ff9b54;
+$purple: #ae76a6;
+$blue: #a3c3d9;
+$lOrange: #f8bd7f;
+$gray: #efefef;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.main-wrapper {
+  background-color: rgb(92, 160, 23);
+  text-align: center;
+
+  h1 {
+    color: rgba(0, 0, 0, 0.5);
+  }
+
+  @include media('>phone', '<=tablet') {
+    background-color: $purple;
+    &:before {
+      display: flex;
+      justify-content: center;
+      content: 'Tablet vp';
+      color: rgb(90, 20, 20);
+    }
+
+  }
+
+  @include media('>tablet') {
+    background-color: $orange;
+    &:before {
+      content: 'Desktop vp';
+      color: rgb(236, 70, 5);
+    }
+  }
+}
+
+.testing-layer {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  height: 50vh;
+  color: white;
+  font-size: 2em;
+
+  @include media('>phone', '<=tablet') {
+    text-align: left;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
+    align-items: center;
+  }
+
+  @include media('>tablet') {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    text-align: center;
+    align-items: center;
+  }
+}
