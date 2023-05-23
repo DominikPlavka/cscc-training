@@ -5,13 +5,14 @@ $purple: #ae76a6;
 $blue: #a3c3d9;
 $lOrange: #f8bd7f;
 $gray: #efefef;
+$dark: #3b3b3b;
 
 * {
   margin: 0;
   padding: 0;
 }
 
-.main-wrapper {
+.bright-wrapper {
   background-color: rgb(92, 160, 23);
   text-align: center;
 
@@ -39,7 +40,35 @@ $gray: #efefef;
   }
 }
 
-.testing-layer {
+.dark-wrapper {
+  background-color: $dark;
+  text-align: center;
+
+  h1 {
+    color: rgba(0, 0, 0, 0.5);
+  }
+
+  @include media('>phone', '<=tablet') {
+    background-color: $dark;
+    &:before {
+      display: flex;
+      justify-content: center;
+      content: 'Tablet vp';
+      color: rgb(90, 20, 20);
+    }
+
+  }
+
+  @include media('>tablet') {
+    background-color: $dark;
+    &:before {
+      content: 'Desktop vp';
+      color: rgb(236, 70, 5);
+    }
+  }
+}
+
+.test-layer {
   display: flex;
   flex-direction: column;
   text-align: center;
